@@ -1,0 +1,9 @@
+fastapi
+uvicorn[stardard]
+sqlalchemy
+pymysql
+python-multipart
+passlib[bcrypt]
+python-jose[cryptography]
+bcrypt
+PyJWT
