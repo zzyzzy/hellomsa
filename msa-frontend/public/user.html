@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, Python MSA</title>
+</head>
+<body>
+    <h1>Hello, Python MSA</h1>
+    <h2>User List</h2>
+    <div id="user-list"></div>
+    <hr>
+
+    <h2>User Register</h2>
+    <form id="userfrm">
+        <div>아이디 : <input type="text" id="userid"></div>
+        <div>비밀번호 : <input type="password" id="passwd"></div>
+        <div>이름 : <input type="text" id="name"></div>
+        <div>이메일 : <input type="text" id="email"></div>
+        <div><button type="button" id="regbtn">등록하기</button></div>
+    </form>
+
+    <hr>
+    <h2>User Login</h2>
+    <form id="loginfrm">
+        <div>아이디 : <input type="text" id="uid"></div>
+        <div>비밀번호 : <input type="password" id="pwd"></div>
+        <div><button type="button" id="loginbtn">로그인하기</button>
+            <button type="button" id="logoutbtn" style="display: none">로그아웃하기</button></div>
+    </form>
+
+    <script src="/js/user.js"></script>
+</body>
+</html>
