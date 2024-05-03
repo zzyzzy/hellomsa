@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  frontendapp:
+    build:
+      context: ./msa-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    container_name: frontendapp
+
+  productapp:
+    build:
+      context: ./product-service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    container_name: productapp        
+
+  userapp:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "8010:8010"
+    container_name: userapp        
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/index.html:/usr/share/nginx/html/index.html  
+    container_name: nginx        
+    depends_on:
+      - frontendapp
+      - productapp
+      - userapp  
+
+#networks:
+#  default:
+#    driver: bridge
+
